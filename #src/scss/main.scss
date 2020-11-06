@@ -1,0 +1,15 @@
+@import "_mixin.scss";
+@import "_fonts.scss";
+@import "_variables.scss";
+@import "_global.scss";
+@import "_preloader-backtop.scss";
+
+/* Components */
+@import "./components/_header.scss";
+@import "./components/_surf.scss";
+@import "./components/_block.scss";
+@import "./components/_travel.scss";
+@import "./components/_sleep.scss";
+@import "./components/_shop.scss";
+@import "./components/_footer.scss";
+@import "./components/_media.scss";
