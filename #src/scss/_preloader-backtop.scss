@@ -1,0 +1,99 @@
+.preloader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color;
+  z-index: 1005;
+  transition: $transition;
+}
+
+.preloader-inner {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: $accent;
+  animation: rotating 2.5s infinite ease;
+  z-index: 1006;
+  transition: $transition;
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    border: inherit;
+  }
+  &:after {
+    top: 5px;
+    left: 5px;
+    width: 80px;
+    height: 80px;
+    border-top-color: $accent;
+    animation: rotating 2s infinite ease;
+  }
+  &:before {
+    top: 15px;
+    left: 15px;
+    width: 60px;
+    height: 60px;
+    border-top-color: $accent;
+    animation: rotating 1.5s infinite ease;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#backtop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: $accent;
+  transition: $transition;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  cursor: pointer;
+  svg {
+    transform: rotate(-90deg);
+  }
+  &:hover {
+    background-color: $background-color;
+  }
+  &:active {
+    background-color: $background-color;
+  }
+  &.backtop-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

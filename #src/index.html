@@ -3,6 +3,14 @@
   @include('_head.html')
   <body>
     <div class="wrapper">
+      <div class="preloader">
+        <div class="preloader-inner"></div>
+      </div>
+      <a id="backtop">
+        <svg width="25" height="21">
+          <use xlink:href="img/sprite.svg#arrow-right"></use>
+        </svg>
+      </a>
       @include('_header.html',{})
       <main class="container">
         <section class="surf" id="surf">

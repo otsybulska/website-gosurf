@@ -1,3 +1,21 @@
+$(window).on('load', function() {
+  $('.preloader-inner').fadeOut('slow');
+  $('.preloader').delay(100).fadeOut('slow');
+});
+
+let backtop = $('#backtop');
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    backtop.addClass('backtop-active');
+  } else {
+    backtop.removeClass('backtop-active');
+  }
+});
+backtop.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
 $(function () {
   $(".header-slider").slick({
     infinite: true,
