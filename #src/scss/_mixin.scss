@@ -8,36 +8,6 @@
   }
 }
 
-@mixin layer($position: absolute, $top: 0, $left: $top, $bottom: $top, $right: $top) {
-  content: "";
-  position: $position;
-  top: $top;
-  left: $left;
-  bottom: $bottom;
-  right: $right;
-}
-
-@mixin block($width: $width, $height: $width) {
-  width: $width;
-  height: $height;
-}
-
-@mixin truncate($text-width) {
-  max-width: $text-width;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@mixin noselect() {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
-}
-
 @mixin shadow() {
   content: "";
   position: absolute;
@@ -54,12 +24,14 @@
   background-repeat: no-repeat;
 }
 
-// xs Extra small devices (phones, 1px and up)
-// sm Small devices (landscape phones, 576px and up)
-// md Medium devices (tablets, 768px and up)
-// lg Large devices (desktops, 992px and up)
-// xl Extra large devices (large desktops, 1200px and up)
-@mixin media($breakpoint) {
+@mixin truncate($text-width) {
+  max-width: $text-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin m($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
