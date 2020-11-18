@@ -16,7 +16,7 @@ const path = {
     scss: source_folder + "/scss/styles.scss",
     scripts: source_folder + "/scripts/scripts.js",
     img: source_folder + "/assets/img/**/*.{jpg,png,svg,gif,ico,webp}",
-    icons: source_folder + "/assets/icons/sprite.svg",
+    icons: source_folder + "/assets/icons/**/*.svg",
     fonts: source_folder + "/assets/fonts/*.ttf",
   },
   watch: {
@@ -70,7 +70,7 @@ function pug2html() {
     //.pipe(puglinter({ reporter: 'default' }))
     .pipe(pug())
     .pipe(htmlvalidator())
-    .pipe(bemvalidator())
+    //.pipe(bemvalidator())
     .pipe(dest(path.build.pug))
     .pipe(browsersync.stream());
 }
@@ -164,8 +164,8 @@ function libs() {
   .pipe(concat("_libs.scss"))
   .pipe(dest(source_folder + "/scss/"));
   return src([
-      'node_modules/slick-carousel/slick/slick.js',
-      'node_modules/wow.js/dist/wow.js',
+      'node_modules/slick-carousel/slick/slick.min.js',
+      'node_modules/wow.js/dist/wow.min.js',
       'node_modules/svg4everybody/dist/svg4everybody.legacy.min.js',
     ])
     .pipe(concat("libs.min.js"))

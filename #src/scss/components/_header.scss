@@ -140,14 +140,15 @@
   &__item {
     position: relative;
     height: 100vh;
-    @include bg;
     // .header-slider__item--1
     &--1 {
       background-image: url("../assets/img/header-bg-1.jpg");
+      @include bg;
     }
     // .header-slider__item--2
     &--2 {
       background-image: url("../assets/img/header-bg-2.jpg");
+      @include bg;
     }
   }
   // .header-slider__text
