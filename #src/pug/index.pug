@@ -1,14 +1,10 @@
-doctype html
-html(lang="en")
-  head
-    include components/head.pug
-  body
-    .wrapper
-      include components/preloader-backtop.pug
-      include components/header.pug
-      main.container
-        include components/surf.pug
-        include components/travel.pug
-        include components/sleep.pug
-        include components/shop.pug
-        include components/footer.pug
+extends extends/layout
+
+block content
+  .wrapper
+    include include/preloader-backtop.pug
+    main.container
+      include include/surf.pug
+      include include/travel.pug
+      include include/sleep.pug
+      include include/shop.pug

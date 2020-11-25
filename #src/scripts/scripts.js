@@ -151,6 +151,7 @@ $(function () {
   $('.header__nav-btn').on('click', function () {
     $('.header-nav__list').toggleClass('active');
   });
-
-  new WOW().init();
 });
+
+svg4everybody();
+new WOW().init();
